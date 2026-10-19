@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --burnt-sienna: #C65D52;
+    --burnished-lilac: #C5AEB1;
+    --coffee-bean: #4D433E;
+    --white-onyx: #D7D6CE;
+    --rhodonite: #3E3B59;
+    --sage-green: #B2AC88;
+    --sycamore: #3E4D3B;
+    --angora: #DFD1BB;
+    --surface-ivory: #FAF8F5;
+    --surface-card: #FFFFFF;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: #2A2421;
+    color: #4D433E;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Plus Jakarta Sans", "Segoe UI", Roboto, sans-serif;
+    letter-spacing: -0.012em;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.022em;
+    color: #362E2A;
+  }
+}
+
+/* Subtle custom scrollbars */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(77, 67, 62, 0.2);
+  border-radius: 9999px;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Tactile Apple-style Range Slider in Pantone Palette */
+input[type="range"].cocok-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  background: #D7D6CE;
+  border-radius: 999px;
+  outline: none;
+}
+
+input[type="range"].cocok-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 2px solid #C65D52;
+  box-shadow: 0 2px 8px rgba(77, 67, 62, 0.18);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+input[type="range"].cocok-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.08);
+}
+
+input[type="range"].cocok-slider::-webkit-slider-thumb:active {
+  transform: scale(0.95);
+}
+
+@keyframes pulse-warm {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-skeleton {
+  animation: pulse-warm 1.6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
